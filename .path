@@ -1,0 +1,9 @@
+# Key executable locations
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
+# Packer
+export PATH=$PATH:$HOME/.packer

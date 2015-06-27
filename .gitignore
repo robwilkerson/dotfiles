@@ -1,7 +1,8 @@
-# Compiled Python files
-*.pyc
+#
+# Stupid stuff
+#
 
-# Folder view configuration files
+# Folder view config files
 .DS_Store
 Desktop.ini
 
@@ -9,6 +10,35 @@ Desktop.ini
 ._*
 Thumbs.db
 
-# Files that might appear on external disks
+# Stuff that sometimes shows up on external disks
 .Spotlight-V100
 .Trashes
+
+ 
+# 
+# Developer environment stuff
+# 
+
+
+# Vagrant configuration file
+.vagrant
+
+# IDE files
+*.sublime-*
+.idea
+
+# Common runtime stuff
+.sass-cache/
+node_modules/
+logs/
+*.log
+
+# All project-centric rc files.
+# By my own convention, these files usually contain sensitive information.
+.*rc
+
+# Compiled files and archives
+*.pyc
+*.tar
+*.tar.gz
+*.tar.bz2

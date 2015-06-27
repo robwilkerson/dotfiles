@@ -1,0 +1,5 @@
+{
+  "post-processors": {
+    "vagrant-s3": "packer-post-processor-vagrant-s3"
+  }
+}
