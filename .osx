@@ -27,6 +27,10 @@ sudo nvram SystemAudioVolume=" "
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+# Disable "long press" for character suggestions. This messes with
+# with VIm navigation.
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Menu bar: hide the Time Machine icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
 	defaults write "${domain}" dontAutoLoad -array \
