@@ -6,6 +6,7 @@
 brew cask install adium
 # brew cask install alfred
 brew cask install amazon-music
+brew cask install apptrap
 brew cask install bartender
 # brew cask install betterzip
 brew cask install cloak
