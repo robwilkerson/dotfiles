@@ -3,6 +3,10 @@
 # Install OS X applications that are distributed as binaries.
 #
 
+# Because we need to
+brew tap caskroom/versions
+
+# The apps
 brew cask install adium
 # brew cask install alfred
 brew cask install amazon-music
@@ -17,12 +21,13 @@ brew cask install disk-inventory-x
 brew cask install dropbox
 brew cask install firefox
 brew cask install hipchat
+brew cask install iterm2
 brew cask install keepassx
 brew cask install nottingham
 brew cask install sequel-pro
 brew cask install shuttle
 brew cask install skype
-brew cask install sublime-text
+brew cask install sublime-text3
 brew cask install superduper
 brew cask install vagrant
 brew cask install vagrant-manager
