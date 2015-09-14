@@ -49,6 +49,7 @@ brew install mackup
 brew install go
 
 # Development/Devops tools
+brew install node
 brew install packer
 brew install vagrant-completion
 
