@@ -33,6 +33,7 @@ brew cask install vagrant
 brew cask install vagrant-manager
 brew cask install virtualbox
 brew cask install xmarks-safari
+brew cask install xtrafinder
 
 # We either have to install both via brew cask or neither. If we
 # don't do both, 1password integration in Chrome won't work.
