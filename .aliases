@@ -17,7 +17,7 @@ alias showlib='chflags nohidden ~/Library/'
 alias netstat='lsof -i -P'
 alias nsg='netstat | grep'
 alias appuptime='ps -ax -o etime,command -c | grep'
-alias slime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias slime='/usr/local/bin/subl'
 alias iectrl='export DEBUG="iectrl:*"; iectrl'
 
 # Enable aliases to be sudo’ed
