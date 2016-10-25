@@ -14,6 +14,9 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+# Install both via brew or sometimes things get confused
+brew install python pip
+
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils

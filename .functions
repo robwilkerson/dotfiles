@@ -18,6 +18,10 @@ function precmd() {
 # Display the details of http status codes.
 http() { curl http://httpcode.info/$1; }
 
+# Create the directory structure for an ansible role
+function ansmkrole() {
+  mkdir -p $1/{defaults,files,handlers,meta,tasks,templates,vars}
+}
 
 # Process git completions faster
 # http://stackoverflow.com/a/9810485/1665
@@ -32,4 +36,8 @@ __git_files () {
 # small enough for one screen.
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+function code() {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*;
 }

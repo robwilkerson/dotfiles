@@ -77,8 +77,12 @@
   sm = submodule
   smup = !git submodule sync && git submodule update --init
 
-  # Stuff that comes up from time to time...
-  reset-perms = "!git diff -p | grep -E '^(diff|old mode|new mode)' | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' | git apply"
+  # Add only the non-whitespace changes because line endings are still an
+  # issue in 2015.
+  addnw = "!git diff -w --no-color | git apply --cached --ignore-whitespace"
+
+  # Can't remember why I needed this at one point, but don't want to lose it.
+  # reset-perms = "!git diff -p | grep -E '^(diff|old mode|new mode)' | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' | git apply"
 
   # When `git reset --hard HEAD` doesn't work, try this.
   # @see http://stackoverflow.com/a/19588910/1665
