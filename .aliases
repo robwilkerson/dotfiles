@@ -1,8 +1,6 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 alias -- -="cd -"
 
 # Shortcuts
@@ -10,15 +8,22 @@ alias ls='gls -lAFh --group-directories-first --color=auto'
 alias h='history'
 alias c='clear'
 alias locate='locate -i'
-alias ack='ack -i'
 alias hg='h | grep'
 alias psg='ps -ef | grep -v grep | grep'
 alias showlib='chflags nohidden ~/Library/'
 alias netstat='lsof -i -P'
 alias nsg='netstat | grep'
 alias appuptime='ps -ax -o etime,command -c | grep'
-alias slime='/usr/local/bin/subl'
-alias iectrl='export DEBUG="iectrl:*"; iectrl'
+
+# Docker
+alias d='docker'
+alias di='docker images'
+alias drmi='docker rmi $(docker images | tail -n +2)'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -29,7 +34,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Flush Directory Service cache
-alias flush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias flush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -99,3 +104,5 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+alias dmysql="docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:latest"

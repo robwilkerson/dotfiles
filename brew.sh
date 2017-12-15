@@ -8,14 +8,20 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Install Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+# First things first
+brew install git
+
 # Install both via brew or sometimes things get confused
-brew install python pip
+brew install python3
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -34,16 +40,18 @@ brew install wget --with-iri
 brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
 
 # Install other useful binaries.
-brew install ack
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
 brew install webkit2png
 
-# Backup these things to Dropbox
+# Install a CLI tool for access to the Mac App Store
+# https://github.com/mas-cli/mas
+brew install mas
+
+# Backup these things to the proverbial cloud
 brew install mackup
 
 # Required to use the Vagrant S3 post processor
@@ -53,7 +61,10 @@ brew install go
 
 # Development/Devops tools
 brew install node
+brew install yarn
+brew install jq
 brew install packer
+brew install packer-completion
 brew install vagrant-completion
 
 # Remove outdated versions from the cellar.

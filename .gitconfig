@@ -7,8 +7,9 @@
 # See ~/dotfiles/.extra for the contents of the [user] section.
 [user]
 
-  name = robwilkerson
-  email = rob@robwilkerson.org
+	name = Rob Wilkerson
+	email = rob@robwilkerson.org
+  signingkey = DFF6AF2AAC3961A2
 
 [core]
 
@@ -21,6 +22,8 @@
   # Line ending nonsense
   autocrlf = input
 
+[commit]
+  gpgsign = false
 [push]
 
   # Push the current branch to its upstream branch
@@ -72,6 +75,8 @@
   assume = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
   assumed = !git ls-files -v | grep ^h | cut -c 3-
+
+  unmerged = branch --no-merged
 
   # Do stuff with submodules
   sm = submodule
@@ -130,3 +135,20 @@
 
   # Automatically correct and execute mistyped commands
   autocorrect = 1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	program = gpg2
+
+[includeIf "gitdir/i:~/Development/socrates/"]
+  path = ~/Development/socrates/.gitconfig
+[includeIf "gitdir/i:~/Development/adhoc/"]
+  path = ~/Development/adhoc/.gitconfig
+[includeIf "gitdir/i:~/Development/centretek/"]
+  path = ~/Development/centretek/.gitconfig
+[includeIf "gitdir/i:~/Development/mandrel/"]
+  path = ~/Development/mandrel/.gitconfig
