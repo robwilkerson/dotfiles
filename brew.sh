@@ -38,14 +38,14 @@ brew install wget --with-iri
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
+brew install homebrew/grep
+brew install homebrew/openssh
 
 # Install other useful binaries.
 brew install speedtest_cli
 brew install ssh-copy-id
-brew install tree
-brew install webkit2png
+# brew install tree
+# brew install webkit2png
 
 # Install a CLI tool for access to the Mac App Store
 # https://github.com/mas-cli/mas
@@ -60,12 +60,13 @@ brew install mackup
 brew install go
 
 # Development/Devops tools
-brew install node
-brew install yarn
 brew install jq
+brew install node
 brew install packer
 brew install packer-completion
-brew install vagrant-completion
+# brew install vagrant
+# brew install vagrant-completion
+brew install yarn
 
 # Remove outdated versions from the cellar.
 brew cleanup
